@@ -56,6 +56,36 @@
     .accept-btn:hover {
       background: #45a049;
     }
+
+    /* Style for Mobile Menu */
+    .mobile-menu {
+      display: none;
+      background: #000;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      background: #333;
+    }
+
+    /* Hide toggle button on large screens */
+    @media (min-width: 769px) {
+      .menu-toggle {
+        display: none;
+      }
+    }
   </style>
   <link rel="stylesheet" href="./style.css">
 </head>
@@ -63,17 +93,31 @@
     <div class="w3-top">
         <div class="w3-bar w3-black w3-wide w3-padding w3-card">
           <a href="index.html" class="w3-bar-item w3-button"><b>GG</b> Players</a>
+      
+          <!-- Desktop Menu -->
           <div class="w3-right w3-hide-small">
-            <a href="index.html" class="w3-bar-item w3-button">Home</a>
+            <a href="index.html#top-players" class="w3-bar-item w3-button">Top Players</a>
             <a href="search.html" class="w3-bar-item w3-button">Social Hub</a>
             <a href="chats.html" class="w3-bar-item w3-button">Chats</a>
             <a href="index.html#about" class="w3-bar-item w3-button">About</a>
-            <button onclick="toggleDarkMode()" class="w3-bar-item w3-button">🌙</button>
+            <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
           </div>
+      
+          <!-- Mobile Menu Toggle Button -->
+          <a href="javascript:void(0);" class="w3-bar-item w3-button w3-right menu-toggle" onclick="toggleMobileMenu()">☰</a>
         </div>
-</div>
+      
+        <!-- Mobile Menu (Hidden by Default) -->
+        <div id="mobileMenu" class="mobile-menu w3-hide-large w3-hide-medium">
+          <a href="index.html#top-players">Top Players</a>
+          <a href="search.html">Social Hub</a>
+          <a href="chats.html">Chats</a>
+          <a href="index.html#about">About</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+    </div>
 
-<div class="container">
+<div class="container" style="margin-top: 30px;">
   <h2>All Friend Requests</h2>
 
   <div class="request">
