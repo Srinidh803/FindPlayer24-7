@@ -112,6 +112,29 @@
       cursor: pointer;
       margin-left: 5px;
     }
+    /* Style for Mobile Menu */
+    .mobile-menu {
+      display: none;
+      background: #000;
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 100%;
+      text-align: center;
+      z-index: 1000;
+    }
+
+    .mobile-menu a {
+      display: block;
+      padding: 10px;
+      color: white;
+      text-decoration: none;
+    }
+
+    .mobile-menu a:hover {
+      background: #333;
+    }
+
 
     /* Mobile Responsive */
     @media (max-width: 768px) {
@@ -151,37 +174,12 @@
         z-index: 1100;
         border-radius: 5px;
       }
-    }
-    /* Style for Mobile Menu */
-    .mobile-menu {
-      display: none;
-      background: #000;
-      position: absolute;
-      top: 50px;
-      right: 0;
-      width: 100%;
-      text-align: center;
-      z-index: 1000;
-    }
 
-    .mobile-menu a {
-      display: block;
-      padding: 10px;
-      color: white;
-      text-decoration: none;
-    }
-
-    .mobile-menu a:hover {
-      background: #333;
-    }
-
-    /* Hide toggle button on large screens */
-    @media (min-width: 769px) {
       .menu-toggle {
         display: none;
       }
     }
-  </style>
+    </style>
 </head>
 <body>
 
@@ -203,8 +201,8 @@
       <a href="javascript:void(0);" class="w3-bar-item w3-button w3-right menu-toggle" onclick="toggleMobileMenu()">☰</a>
     </div>
   
-    <!-- Mobile Menu (Hidden by Default) -->
-    <div id="mobileMenu" class="mobile-menu w3-hide-large w3-hide-medium">
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="mobile-menu">
       <a href="index.html#top-players">Top Players</a>
       <a href="search.html">Social Hub</a>
       <a href="chats.html">Chats</a>
