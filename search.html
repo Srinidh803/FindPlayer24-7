@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GG Players - Social Hub</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      background-color: #f1f1f1;
+      transition: background 0.3s ease, color 0.3s ease;
+    }
+
+    .dashboard {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .sidebar {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .main-content {
+      flex: 2;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .right-sidebar {
+      flex: 1;
+      min-width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .friend-requests h4 {
+      margin-bottom: 15px;
+    }
+
+    .request {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .request:last-child {
+      border-bottom: none;
+    }
+
+    .request img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .friend-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .accept-btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .accept-btn:hover {
+      background: #45a049;
+    }
+
+    .dark-mode {
+      background-color: #121212;
+      color: white;
+    }
+
+    .dark-mode .sidebar,
+    .dark-mode .main-content,
+    .dark-mode .right-sidebar {
+      background: #222;
+      color: white;
+    }
+
+    .dark-mode .request {
+      border-bottom: 1px solid #444;
+    }
+
+    .dark-mode .accept-btn {
+      background: #4CAF50;
+    }
+
+    .dark-mode .accept-btn:hover {
+      background: #45a049;
+    }
+
+    .search-btn {
+      background: #000;
+      color: white;
+      width: 100%;
+      padding: 10px;
+      border: none;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .search-btn:hover {
+      background: #333;
+    }
+
+    .search-result {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding: 10px;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .search-result img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+  </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="w3-top">
+    <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+      <a href="index.html" class="w3-bar-item w3-button"><b>GG</b> Players</a>
+      <div class="w3-right w3-hide-small">
+        <a href="index.html#top-players" class="w3-bar-item w3-button">Top Players</a>
+        <a href="search.html" class="w3-bar-item w3-button">Social Hub</a>
+        <a href="chats.html" class="w3-bar-item w3-button">Chats</a>
+        <a href="index.html#about" class="w3-bar-item w3-button">About</a>
+        <a href="index.html#contact" class="w3-bar-item w3-button">Contact</a>
+        <button onclick="toggleDarkMode()" class="w3-bar-item w3-button">🌙</button>
+      </div>
+    </div>
+</div>
+
+<!-- Page Content -->
+<div class="dashboard">
+    
+    <!-- Left Sidebar (Filters) -->
+    <div class="sidebar">
+      <h4>Find Players</h4>
+      <label>Game:</label>
+      <select class="w3-select w3-border">
+        <option value="" disabled selected>Choose a game</option>
+        <option>Valorant</option>
+        <option>CS:GO</option>
+        <option>Fortnite</option>
+      </select>
+
+      <label>Experience (Years):</label>
+      <input class="w3-input w3-border" type="number" placeholder="Min Experience">
+
+      <label>Skill Level:</label>
+      <select class="w3-select w3-border">
+        <option value="" disabled selected>Select Level</option>
+        <option>Beginner</option>
+        <option>Intermediate</option>
+        <option>Pro</option>
+      </select>
+
+      <label>College:</label>
+      <input class="w3-input w3-border" type="text" placeholder="Enter College Name">
+
+      <label>State:</label>
+      <input class="w3-input w3-border" type="text" placeholder="Enter State">
+
+      <label>Country:</label>
+      <input class="w3-input w3-border" type="text" placeholder="Enter Country">
+
+      <button class="search-btn">Search</button>
+    </div>
+
+    <!-- Main Content (Search Results) -->
+    <div class="main-content">
+      <h4>Players Found</h4>
+
+      <div class="search-result">
+        <img src="https://picsum.photos/60?random=1" alt="Player">
+        <div>
+          <h5>S1mple</h5>
+          <p>Game: CS:GO | Pro Player</p>
+          <button class="w3-button w3-blue w3-small">View Profile</button>
+        </div>
+      </div>
+
+      <div class="search-result">
+        <img src="https://picsum.photos/60?random=2" alt="Player">
+        <div>
+          <h5>Shroud</h5>
+          <p>Game: Valorant | Pro Player</p>
+          <button class="w3-button w3-blue w3-small">View Profile</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Sidebar (Friend Requests) -->
+    <div class="right-sidebar">
+        <div class="friend-requests">
+            <h4>Friend Requests (3)</h4>
+
+            <div class="request">
+                <div class="friend-info">
+                    <img src="https://picsum.photos/40?random=3" alt="Alex">
+                    <p><b>Alex</b></p>
+                </div>
+                <button class="accept-btn">Accept</button>
+            </div>
+
+            <div class="request">
+                <div class="friend-info">
+                    <img src="https://picsum.photos/40?random=4" alt="John">
+                    <p><b>John</b></p>
+                </div>
+                <button class="accept-btn">Accept</button>
+            </div>
+
+            <!-- "View All Requests" Button (Redirects to requests.html) -->
+            <a href="requests.html" class="w3-button w3-black w3-small w3-block">View All Requests</a>
+        </div>
+    </div>
+
+    
+    </div>
+
+<script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+  }
+</script>
+
+</body>
+</html>

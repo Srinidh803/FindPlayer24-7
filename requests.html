@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Friend Requests</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+  <style>
+    body {
+      background-color: #f1f1f1;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .request {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .request:last-child {
+      border-bottom: none;
+    }
+
+    .request img {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      margin-right: 10px;
+    }
+
+    .friend-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .accept-btn {
+      background: #4CAF50;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    .accept-btn:hover {
+      background: #45a049;
+    }
+  </style>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="w3-top">
+        <div class="w3-bar w3-black w3-wide w3-padding w3-card">
+          <a href="index.html" class="w3-bar-item w3-button"><b>GG</b> Players</a>
+          <div class="w3-right w3-hide-small">
+            <a href="index.html" class="w3-bar-item w3-button">Home</a>
+            <a href="search.html" class="w3-bar-item w3-button">Social Hub</a>
+            <a href="chats.html" class="w3-bar-item w3-button">Chats</a>
+            <a href="index.html#about" class="w3-bar-item w3-button">About</a>
+            <button onclick="toggleDarkMode()" class="w3-bar-item w3-button">🌙</button>
+          </div>
+        </div>
+</div>
+
+<div class="container">
+  <h2>All Friend Requests</h2>
+
+  <div class="request">
+    <div class="friend-info">
+      <img src="https://picsum.photos/50?random=5" alt="Alex">
+      <p><b>Alex</b></p>
+    </div>
+    <button class="accept-btn">Accept</button>
+  </div>
+
+  <div class="request">
+    <div class="friend-info">
+      <img src="https://picsum.photos/50?random=6" alt="John">
+      <p><b>John</b></p>
+    </div>
+    <button class="accept-btn">Accept</button>
+  </div>
+
+  <div class="request">
+    <div class="friend-info">
+      <img src="https://picsum.photos/50?random=7" alt="Sarah">
+      <p><b>Sarah</b></p>
+    </div>
+    <button class="accept-btn">Accept</button>
+  </div>
+
+  <div class="request">
+    <div class="friend-info">
+      <img src="https://picsum.photos/50?random=8" alt="David">
+      <p><b>David</b></p>
+    </div>
+    <button class="accept-btn">Accept</button>
+  </div>
+
+</div>
+
+</body>
+</html>

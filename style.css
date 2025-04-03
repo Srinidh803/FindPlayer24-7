@@ -1,0 +1,109 @@
+/* GENERAL STYLES */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  
+  /* NAVBAR */
+  .w3-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .w3-bar-item {
+    padding: 10px;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    background: url('https://picsum.photos/1200/600?random=10') center/cover no-repeat;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 2rem;
+    color: white;
+    background: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    border-radius: 8px;
+  }
+  
+  /* GRID LAYOUT FOR SOCIAL HUB */
+  .dashboard {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .sidebar, .main-content, .right-sidebar {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+  }
+  
+  /* CHAT & REQUESTS */
+  .friend-requests, .chat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .request, .chat {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .friend-info, .chat-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .friend-info img, .chat-info img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+  }
+  
+  /* DARK MODE */
+  .dark-mode {
+    background-color: #121212;
+    color: white;
+  }
+  
+  .dark-mode .sidebar,
+  .dark-mode .main-content,
+  .dark-mode .right-sidebar {
+    background-color: #1e1e1e;
+    color: white;
+  }
+  
+  /* MOBILE RESPONSIVENESS */
+  @media (min-width: 768px) {
+    .dashboard {
+      grid-template-columns: 1fr 2fr 1fr;
+    }
+  
+    .hero h1 {
+      font-size: 3rem;
+    }
+  }
+  
